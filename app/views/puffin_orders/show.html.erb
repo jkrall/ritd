@@ -1,0 +1,68 @@
+<h3>Puffin Order Details</h3>
+<p>
+	<b>Fundraiser:</b>
+	<%=h @puffin_order.fundraiser.name if not @puffin_order.fundraiser.nil? %>
+</p>
+<p>
+	<b>Name:</b>
+	<%=h @puffin_order.name %>
+</p>
+<p>
+	<b>Phone:</b>
+	<%=h @puffin_order.phone %>
+</p>
+<p>
+	<b>Paid:</b>
+	<%=h @puffin_order.paid %>
+</p>
+<p>
+	<b>Cinnamon:</b>
+	<%=@puffin_order.cinnamon %>
+</p>
+<p>
+	<b>Creamcheese:</b>
+	<%=@puffin_order.creamcheese %>
+</p>
+<p>
+	<b>Strawberry:</b>
+	<%=@puffin_order.strawberry %>
+</p>
+<p>
+	<b>Blueberry:</b>
+	<%=@puffin_order.blueberry %>
+</p>
+<p>
+	<b>Apple:</b>
+	<%=@puffin_order.apple %>
+</p>
+<p>
+	<b>Chocolate:</b>
+	<%=@puffin_order.chocolate %>
+</p>
+<p>
+	<b>Caramel:</b>
+	<%=@puffin_order.caramel %>
+</p>
+<p>
+	<b>Total:</b>
+	<%=@puffin_order.total_puffins %>
+</p>
+<p>
+	<b>Paid:</b>
+	<%=number_to_currency(@puffin_order.paid) %>
+</p>
+<p>
+	<b>Due:</b>
+	<%=number_to_currency(@puffin_order.due) %>
+</p>
+<p>
+	<b>Owed:</b>
+	<%=number_to_currency(@puffin_order.owed) %>
+</p>
+<p>
+	<b>Organization Profit:</b>
+	<%=number_to_currency(@puffin_order.organization_profit) %>
+</p>
+
+<%= link_to 'Edit', edit_puffin_order_path(@puffin_order) %> |
+<%= link_to 'Back', puffin_orders_path %>

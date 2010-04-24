@@ -1,0 +1,25 @@
+<h3>Active Fundraisers</h3>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Start date</th>
+    <th>Delivery date</th>
+    <th>Organization</th>
+  </tr>
+<%= render :partial => 'fundraiser', :collection => @active_fundraisers, :locals => { :include_organization => true }  %>
+</table>
+
+<br />
+<%= link_to 'New fundraiser', new_fundraiser_path %>
+<br />
+
+<h3>Old Fundraisers</h3>
+<table>
+  <tr>
+    <th>Start date</th>
+    <th>Delivery date</th>
+    <th>Name</th>
+    <th>Organization</th>
+  </tr>
+<%= render :partial => 'fundraiser', :collection => @old_fundraisers, :locals => { :include_organization => true }  %>
+</table>

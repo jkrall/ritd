@@ -1,0 +1,31 @@
+<h3>Organization Information</h3>
+<p>
+  <b>Name:</b>
+  <%=h @organization.name %>
+</p>
+<p>
+  <b>Contact:</b>
+  <%=h @organization.contact %>
+</p>
+<p>
+  <b>Phone:</b>
+  <%=h @organization.phone %>
+</p>
+<p>
+  <b>Email:</b>
+  <%=h @organization.email %>
+</p>
+
+<h3>Fundraisers for this Organization</h3>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Start date</th>
+    <th>Delivery date</th>
+  </tr>
+<%= render :partial => 'fundraisers/fundraiser', :collection => @organization.fundraisers  %>
+</table>
+
+
+<%= link_to 'Edit', edit_organization_path(@organization) %> |
+<%= link_to 'Back', organizations_path %>

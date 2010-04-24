@@ -1,0 +1,25 @@
+<% include_fundraiser = false if include_fundraiser.nil? %>
+	<tr>
+		<% if include_fundraiser %>
+		<td class='string'>
+		<%=link_to(h(puffin_order.fundraiser.name), fundraiser_path(puffin_order.fundraiser)) if not puffin_order.fundraiser.nil? %>
+		</td>
+		<% end %>
+		<td class='string'><%=link_to h(h puffin_order.name), puffin_order_path(puffin_order) %></td>
+		<td class='phone'><%=h puffin_order.phone %></td>
+		<td class='tally'><%=puffin_order.cinnamon %></td>
+		<td class='tally'><%=puffin_order.creamcheese %></td>
+		<td class='tally'><%=puffin_order.strawberry %></td>
+		<td class='tally'><%=puffin_order.blueberry %></td>
+		<td class='tally'><%=puffin_order.apple %></td>
+		<td class='tally'><%=puffin_order.chocolate %></td>
+		<td class='tally'><%=puffin_order.caramel %></td>
+		<td class='tally'><%=puffin_order.total_puffins %></td>
+		<td class='dollar'><%=number_to_currency(puffin_order.paid) %></td>
+		<td class='dollar'><%=number_to_currency(puffin_order.due) %></td>
+		<td class='dollar'><%=number_to_currency(puffin_order.owed) %></td>		
+		<td class='dollar'><%=number_to_currency(puffin_order.organization_profit) %></td>				
+
+		<td class='edit'><%= link_to 'Edit', edit_puffin_order_path(puffin_order) %></td>
+		<td class='destroy'><%= link_to 'X', puffin_order, :confirm => 'Are you sure?', :method => :delete %></td>
+	</tr>

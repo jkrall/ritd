@@ -1,0 +1,27 @@
+<h2>Fundraiser Information</h2>
+<p>
+  <b>Start date:</b>
+  <%=h @fundraiser.start_date %>
+</p>
+<p>
+  <b>Delivery date:</b>
+  <%=h @fundraiser.delivery_date %>
+</p>
+<p>
+  <b>Name:</b>
+  <%=h @fundraiser.name %>
+</p>
+<p>
+  <b>Organization:</b>
+  <%=h @fundraiser.organization.name if not @fundraiser.organization.nil? %>
+</p>
+
+<h3>Puffin Orders for this Fundraiser</h3>
+<table>
+	<%= render :partial => 'puffin_orders/puffin_order_headers' %>
+	<%= render :partial => 'puffin_orders/puffin_order', :collection => @fundraiser.puffin_orders  %>
+</table>
+
+
+<%= link_to 'Edit', edit_fundraiser_path(@fundraiser) %> |
+<%= link_to 'Back', fundraisers_path %>

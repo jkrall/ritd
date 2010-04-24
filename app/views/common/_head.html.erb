@@ -1,0 +1,19 @@
+<%#  Partial for adding all of the meta, link, and title tags to the <head> section %>
+	<% @meta_httpequiv.each do |name, content| %>
+		<meta http-equiv="<%=name%>" content="<%=content%>" />
+	<% end %>
+	<% @meta_content.each do |name, content| %>
+		<meta name="<%=name%>" content="<%=content%>" />
+	<% end %>
+	<link rel="shortcut icon" href="/images/favicon.ico" />
+	<title><%= @meta_content['title'] %></title>
+	<%= @stylesheets.collect { |file| stylesheet_link_tag file }.join("\n").html_safe if @stylesheets %>
+
+	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+		google.load("prototype", "1.6.0.2");
+		google.load("scriptaculous", "1.8.1");
+	</script>
+
+	<%= @javascripts.collect { |file| javascript_include_tag file }.join("\n").html_safe if @javascripts %>
+

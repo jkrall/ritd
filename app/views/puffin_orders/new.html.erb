@@ -1,0 +1,54 @@
+<h2>Create a New Puffin Order</h2>
+
+<% form_for(@puffin_order) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :fundraiser_id %><br />
+	<%= collection_select(:puffin_order, :fundraiser_id, Fundraiser.active, :id, :name, {:include_blank => true}) %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :paid %><br />
+    <%= f.text_field :paid %>
+  </p>
+  <p>
+    <%= f.label :cinnamon %><br />
+    <%= f.text_field :cinnamon %>
+  </p>
+  <p>
+    <%= f.label :creamcheese %><br />
+    <%= f.text_field :creamcheese %>
+  </p>
+  <p>
+    <%= f.label :strawberry %><br />
+    <%= f.text_field :strawberry %>
+  </p>
+  <p>
+    <%= f.label :blueberry %><br />
+    <%= f.text_field :blueberry %>
+  </p>
+  <p>
+    <%= f.label :apple %><br />
+    <%= f.text_field :apple %>
+  </p>
+  <p>
+    <%= f.label :chocolate %><br />
+    <%= f.text_field :chocolate %>
+  </p>
+  <p>
+    <%= f.label :caramel %><br />
+    <%= f.text_field :caramel %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', puffin_orders_path %>

@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <%= render :partial => 'common/head' %>
+    </head>
+    <body id="page_bg" class="color_blue bg_blue width_fmax">
+        <%# = render :partial => 'analytics/google_analytics_init' %>
+        <div class="center" align="center">
+        <div id="wrapper">
+        	<div id="inner_wrapper">
+	            <%= render :partial => 'common/menu' %>
+	
+	            <div id="whitebox">
+	            	<div id="whitebox_inner">
+		            	<%= flash[:notice] if flash[:notice] %>
+		            	<%= flash[:error] if flash[:error] %>					
+						<%= yield :layout %>
+						<br />
+						<br />
+						<%= render :partial => 'common/admin_options' %>
+					</div>
+				</div>
+			</div>
+        <%= render :partial => 'common/footer' %>
+        </div>
+        <%# = render :partial => 'analytics/internal_traffic' %>
+    </body>
+</html>

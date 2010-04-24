@@ -1,0 +1,9 @@
+<h2>Puffin Order List</h2>
+<table>
+	<%= render :partial => 'puffin_order_headers', :locals=>{:include_fundraiser=>true} %>
+	<%= render :partial => 'puffin_order', :collection => @puffin_orders, :locals => {:include_fundraiser => true} %>
+</table>
+
+<br />
+
+<%= link_to 'New Puffin Order', new_puffin_order_path %>

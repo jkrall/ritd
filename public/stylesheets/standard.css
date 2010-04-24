@@ -1,0 +1,212 @@
+/*****************************/
+/*** Core settings         ***/
+/*****************************/
+html {
+    height: 100%;
+    margin-bottom: 1px;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Verdana, Tahoma, Arial, Helvetica, Sans;
+    line-height: 1.3em;
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+    color: #333;
+}
+
+div table tbody td tr {
+    padding: 0px;
+    margin: 0px;
+    border-collapse: collapse;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    font-weight: normal;
+}
+
+a:hover {
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+input.button {
+    cursor: pointer;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 7px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #283074;
+	position: relative;
+}
+
+img {
+    border: 0 none;
+}
+
+h2 {
+	margin-top: 7px;
+	margin-bottom: 3px;	
+}
+h3 {
+	margin-top: 7px;
+	margin-bottom: 3px;	
+}
+.clear {
+	clear: both;	
+}
+
+/*****************************************/
+/*** specific layout elements ***/
+/*****************************************/
+#page_bg {
+    padding: 0px;
+    margin: 0px;
+    background-color: #5a201c;
+}
+
+div.center {
+    text-align: center;
+}
+
+div#header {
+    height: 72px;
+}
+
+div#tabarea {
+    position: relative;
+    top: 4px;
+}
+
+div#tabarea_l {
+    padding-left: 32px;
+}
+
+div#tabarea_r {
+    height: 42px;
+    padding-right: 1px;
+}
+
+
+/* Menu */
+ul.menu {
+    margin-left: -370px;
+    color: #313472;
+    height: 40px;
+}
+
+table.pill {
+    color: #313472;
+    height: 40px;
+    margin-left: 0px;
+    width: 100%;
+    border-collapse: collapse;
+	border: none;
+	background-color: transparent;
+}
+
+td.pill_m {
+    padding: 0;
+    margin: 0;
+    width: auto;
+	border: none;
+	background-color: transparent;
+}
+
+#pillmenu {
+    white-space: nowrap;
+    height: 32px;
+    float: left;
+	margin-top: 2px;
+}
+
+#pillmenu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#pillmenu li {
+    text-align: center;
+    padding: 0px 20px 0px 20px;
+    float: left;
+}
+
+#pillmenu a {
+    float: left;
+    color: #7D1A1C;
+    text-decoration: none;
+    display: block;
+    height: 24px;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+#pillmenu a:hover {
+    color: #2C3276;
+    font-weight: bold;
+}
+
+.dropdown {
+    float: left;
+    padding-right: 5px
+}
+.dropdown dt {
+    font-weight: bold;
+}
+.dropdown dd {
+    position: absolute;
+    overflow: hidden;
+    width: 150px;
+    display: none;
+    background: #9094AD;
+    z-index: 200;
+    opacity: 0;
+	top: 33px;
+	left: 90px;
+	background-image: url(/images/menu_shadow_bg.jpg);
+	background-repeat: repeat-x;
+}
+.dropdown ul {
+    width: 150px;
+    list-style: none;
+}
+.dropdown li {
+    display: inline
+}
+li.dropdown_first {
+    margin-top: 10px;
+}
+li.dropdown_last {
+    margin-bottom: 5px;
+}
+
+/* Footer */
+div.footerLinks {
+    width: 680px;
+    font-size: 11px;
+    position: relative;
+	height: 20px;
+	margin-left: 90px;
+	margin-right: auto;
+}
+
+div.links {
+    width: 350px;
+    float: left;
+}
+
+div.copyright {
+    width: 300px;
+    float: left;
+}
+

@@ -1,0 +1,12 @@
+<%
+# ---------------------------------------------------
+# Google Analytics Custom Page Track
+# --------------------------------------------------- 
+pagename = nil if local_assigns[:pagename].nil?
+%>
+
+<% if (pagename != nil ) %>
+	<script type="text/javascript">
+		update_analytics("<%= pagename %>");
+	</script>
+<% end %>

@@ -1,0 +1,102 @@
+<%
+# ---------------------------------------------------
+# Google Analytics Init Code
+# --------------------------------------------------- 
+pagename = nil if local_assigns[:pagename].nil?
+%>
+
+<%# Here we init the Google Analytics js library, %>
+<%# and define update_analytics depending on if we are local or not %>
+<% if !($local_traffic) %>
+	<% if logged_in? %>
+		<script type='text/javascript'>
+			var clicky_custom_session = { 
+				username: '<%= current_user.email %>',
+				business: '<%= current_user.business.legal_name %>'
+				<% if not current_user.business.auctions[0].nil? %>
+					,auction_status: '<%= current_user.business.auctions[0].auction_status.status %>'
+				<% end %>
+				};
+		</script>
+	<% end %>
+	<% if request.env['HTTPS'] %>
+		<%= javascript_include_tag('36521.secure') %>
+		<noscript><p><img alt="Clicky" src="https://in.getclicky.com/36521-db5.gif" /></p></noscript>
+	<% else %>
+		<%= javascript_include_tag('36521') %>
+		<noscript><p><img alt="Clicky" src="http://in.getclicky.com/36521-db5.gif" /></p></noscript>
+	<% end %>	
+
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		var trackedPages = new Array();
+		function update_analytics(pagename, now) {
+			if (typeof(trackedPages[pagename]) == 'undefined') {
+				var pageTracker = _gat._getTracker("UA-1145875-4");
+				if (pagename) {
+					
+					pageTracker._trackPageview(pagename);
+					clicky.log(pagename);
+					
+					trackedPages[pagename] = true;					
+				}
+				else {
+					pageTracker._trackPageview();
+				}
+			}
+		}
+
+		var pageTracker = _gat._getTracker("UA-1145875-4");
+		pageTracker._initData();	
+	</script>
+
+	
+<% else %>
+	<script type="text/javascript">
+		var trackedPages = new Array();
+		function update_analytics(pagename, now) 
+		{
+			if (now == undefined) {
+				now = false;
+			}
+
+			if (now == false) {
+				Event.observe(window, 'load', update_analytics.bind(this, pagename, true));
+			}
+			else {
+				if (typeof(trackedPages[pagename]) == 'undefined') {
+					var dispname = pagename;
+					if (pagename == undefined) {
+						pagename = document.URL;
+						pagename = pagename.replace(/http.*:\/\/.*?\//,"/");
+						dispname = pagename + " (normal)"
+					}
+					else {
+						dispname = pagename + " (custom)"
+					}
+					document.getElementById('internal_traffic').innerHTML = "Internal Traffic - " + dispname;
+					trackedPages[pagename] = true;
+				}
+			}
+		}		
+	</script>	
+<% end %>
+
+
+<%# Now we call the update_analytics js method (defined about), %>
+<%# depending on if we are in custom mode or if we have passed in a custom pagename %>
+<% if !(custom_google_analytics?) %>
+	<script type="text/javascript">
+		update_analytics();
+	</script>
+<% else %>
+	<% if (pagename != nil) %>
+		<script type="text/javascript">		
+			update_analytics("<%= pagename %>");
+		</script>
+	<% end %>
+<% end %>
+

@@ -1,0 +1,14 @@
+<% include_organization = false if include_organization.nil? %>
+  <tr>
+    <td><%=link_to h(fundraiser.name), fundraiser_path(fundraiser) %></td>
+    <td><%=h fundraiser.start_date %></td>
+    <td><%=h fundraiser.delivery_date %></td>
+<% if include_organization %>
+	<td>
+		<%=link_to(h(fundraiser.organization.name), organization_path(fundraiser.organization)) if not fundraiser.organization.nil? %>
+	</td>
+<% end %>
+<!--    <td><%= link_to 'Show', fundraiser %></td> -->
+    <td class='edit'><%= link_to 'Edit', edit_fundraiser_path(fundraiser) %></td>
+    <td class='destroy'><%= link_to 'X', fundraiser, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>

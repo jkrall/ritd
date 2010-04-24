@@ -1,0 +1,35 @@
+<div id="header">
+</div>
+<div id="tabarea">
+    <div id="tabarea_l">
+        <div id="tabarea_r">
+            <div id="tabmenu">
+                <table cellpadding="0" cellspacing="0" class="pill">
+                    <tr>
+                        <td class="pill_m">
+                            <div id="pillmenu">
+                                <ul class="menu">
+                                    <li class="menu_item">
+                                        <%= link_to('Home', :action => :index, :controller => :page) %>
+                                    </li>
+                                    <li class="menu_item">
+                                        <%= link_to('Products', :action => :products, :controller => :page) %>
+                                    </li>
+                                    <li class="menu_item">
+                                        <%= link_to('Services', :action => :services, :controller => :page) %>
+                                    </li>
+                                    <li class="menu_item">
+                                        <%= link_to('About Us', :action => :about, :controller => :page) %>
+                                    </li>
+                                    <li class="menu_item">
+                                        <%= link_to('Fundraisers', :action => :resources, :controller => :page) %>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

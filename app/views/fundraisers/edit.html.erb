@@ -1,0 +1,28 @@
+<h2>Edit this Fundraiser</h2>
+
+<% form_for(@fundraiser) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :start_date %><br />
+    <%= f.date_select :start_date %>
+  </p>
+  <p>
+    <%= f.label :delivery_date %><br />
+    <%= f.date_select :delivery_date %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :organization_id %><br />
+	<%= f.collection_select(:organization_id, Organization.find(:all), :id, :name, {:include_blank => true}) %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @fundraiser %> |
+<%= link_to 'Back', fundraisers_path %>

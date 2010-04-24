@@ -1,0 +1,43 @@
+<%# Spit out indicator if 'local_traffic' is set %>
+<% if ($local_traffic) %>
+	<style type="text/css">
+	    #internal_traffic {
+	        /* Netscape 4, IE 4.x-5.0/Win and other lesser browsers will use this */
+	        position: absolute;
+	        top: 0px;
+			left: 0px;
+			background-color: #D3D3D3; 
+			font-size: 10px;
+	    }
+	    
+	    body > div#internal_traffic {
+	        /* used by Opera 5+, Netscape6+/Mozilla, Konqueror, Safari, OmniWeb 4.5+, iCab, ICEbrowser */
+	        position: fixed; 
+			top: 0px; 
+			left: 0px; 
+			background-color: #D3D3D3; 
+			font-size: 10px;
+	    }
+	</style>
+	<!--[if gte IE 5.5]>
+	    <![if lt IE 7]>
+	        <style type="text/css">
+	        div#internal_traffic {
+	        /* IE5.5+/Win - this is more specific than the IE 5.0 version */
+	        right: auto; bottom: auto;
+			left: expression( ( 0 + ( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) + 'px' );
+			top: expression( ( 0 + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) + 'px' );
+			background-color: #D3D3D3; 
+			font-size: 10px;
+	        }
+	        </style>
+	    <![endif]>
+	<![endif]-->
+	<div id='internal_traffic'>Internal Traffic</div>
+<% else %>
+	<% if request.env['HTTPS'] %>
+		<noscript><p><img alt="Clicky" src="https://in.getclicky.com/36521-db5.gif" /></p></noscript>
+	<% else %>
+		<noscript><p><img alt="Clicky" src="http://in.getclicky.com/36521-db5.gif" /></p></noscript>
+	<% end %>	
+<% end %>

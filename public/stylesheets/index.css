@@ -1,0 +1,89 @@
+div#wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    min-height: 500px;
+    background-image: url(../images/MainBG_v2.jpg);
+    background-repeat: no-repeat;
+    background-color: #9095AE;
+}
+
+div#inner_wrapper {
+	height: 505px;
+}
+
+#whitebox {
+    margin-left: 150px;
+    margin-right: 10px;
+    margin-top: 7px;
+    margin-bottom: 10px;
+    width: auto;
+}
+
+#whitebox img {
+    float: left;
+    clear: left;
+    margin-right: 5px;
+}
+
+div#whitebox {
+    text-align: left;
+}
+
+#whitebox_m {
+    width: 570px;
+    margin-left: 27px;
+    margin-right: auto;
+}
+
+div.footerLinks {
+    margin-left: auto;
+    margin-right: auto;
+    width: 790px;
+    font-size: 11px;
+    clear: both;
+    float: none;
+    position: relative;
+    top: 0px;
+    margin-top: -23px;
+    padding: 0px;
+}
+
+p.highlight {
+	font-weight: bold; 
+	font-style: italic;
+	font-size: 18px;
+	line-height: 22px;
+}
+p.highlight span {
+	font-weight: bold;
+	font-style: italic;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 24px;	
+	padding-top: 5px;
+}
+span.ritd_text {
+	font-weight: bold;
+	font-style: italic;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 18px;
+}
+p.middle {
+	margin-top: 40px;
+	margin-bottom: 50px;	 
+	margin-right: 10px;
+}
+p.testimonial {
+	line-height: 12px;
+	font-size: 10px;
+	font-style: italic;
+	font-weight: normal;
+	text-align: left;
+	color: #5A201C;
+	margin-left: -20px;	
+	width: 450px;
+}
+p.testimonial span {
+	font-style: normal;
+	font-weight: bold;
+}
